@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101918">
+    <meta name="description" content="A local research dashboard for ClimateGuard AI rainfall-derived proxy modeling.">
+    <title>ClimateGuard AI — Research Console</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="ClimateGuard AI overview">
+          <span class="brand-mark">C<span>G</span></span>
+          <span class="brand-copy"><strong>ClimateGuard</strong><small>RESEARCH CONSOLE</small></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="nav-list" aria-label="Main navigation">
+          <a href="#overview" class="nav-link active" data-page="overview"><span class="nav-icon">◫</span>Overview</a>
+          <a href="#prediction" class="nav-link" data-page="prediction"><span class="nav-icon">⌁</span>Prediction lab</a>
+          <a href="#models" class="nav-link" data-page="models"><span class="nav-icon">◈</span>Model comparison</a>
+          <a href="#explainability" class="nav-link" data-page="explainability"><span class="nav-icon">⌘</span>Explainability</a>
+          <a href="#scenarios" class="nav-link" data-page="scenarios"><span class="nav-icon">↗</span>Scenario analysis</a>
+          <a href="#about" class="nav-link" data-page="about"><span class="nav-icon">ⓘ</span>About & limitations</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="side-status"><span class="status-dot"></span><span><strong>Local environment</strong><small id="sidebar-health">Connecting to API…</small></span></div>
+          <div class="sidebar-note">Research interface<br>Dhaka, Bangladesh</div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div class="crumb"><span>ClimateGuard AI</span><span class="crumb-sep">/</span><strong id="page-crumb">Overview</strong></div>
+          <div class="top-actions"><span class="runtime-chip"><span class="status-dot"></span><span id="runtime-label">API connecting</span></span><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light theme">◐</button><span class="avatar">CG</span></div>
+        </header>
+
+        <section class="page active" id="page-overview">
+          <div class="hero">
+            <div><div class="eyebrow"><span class="eyebrow-line"></span>RESEARCH WORKSPACE · DHAKA, BD</div><h1>Climate intelligence,<br><span>grounded in evidence.</span></h1><p>A transparent interface to explore rainfall-derived proxy risk modeling, model behavior, and controlled scenario responses.</p><a class="button button-primary" href="#prediction">Open prediction lab <span>↗</span></a></div>
+            <div class="hero-orb" aria-hidden="true"><div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div><div class="orb-center"><span>23.81° N</span><strong>Dhaka</strong><small>90.41° E</small></div><span class="orb-point point-one"></span><span class="orb-point point-two"></span></div>
+            <div class="hero-meta"><span class="meta-kicker">TARGET</span><strong>Rainfall-derived<br>proxy risk</strong><span class="meta-divider"></span><span class="meta-kicker">DATA WINDOW</span><strong id="coverage-summary">Loading coverage…</strong><span class="meta-kicker">NOT AN OPERATIONAL WARNING SYSTEM</span></div>
+          </div>
+          <div id="global-error" class="notice notice-error hidden" role="alert"></div>
+          <div class="section-heading"><div><div class="eyebrow">PROJECT SNAPSHOT</div><h2>Evidence at a glance</h2></div><span class="subtle-label">Persisted project results · Phase 7</span></div>
+          <div class="metric-grid">
+            <article class="metric-card"><div class="metric-top"><span>PROCESSED OBSERVATIONS</span><span class="metric-icon mint">⌖</span></div><strong id="metric-rows">—</strong><small>NASA POWER · daily records</small><div class="metric-foot">Meteorological input series</div></article>
+            <article class="metric-card"><div class="metric-top"><span>TEST PERIOD</span><span class="metric-icon blue">◷</span></div><strong class="metric-date">2024</strong><small>Chronological held-out window</small><div class="metric-foot">366 days · Jan–Dec 2024</div></article>
+            <article class="metric-card"><div class="metric-top"><span>MODEL FAMILIES</span><span class="metric-icon violet">◈</span></div><strong>03</strong><small>Persisted model pipelines</small><div class="metric-foot">No retraining in dashboard</div></article>
+            <article class="metric-card"><div class="metric-top"><span>CALIBRATION</span><span class="metric-icon amber">◎</span></div><strong class="metric-state">Unverified</strong><small>Saved model calibration</small><div class="metric-foot">Probability ≠ flood probability</div></article>
+          </div>
+          <div class="content-grid overview-grid">
+            <article class="panel"><div class="panel-heading"><div><div class="eyebrow">HELD-OUT PERFORMANCE</div><h3>Proxy-task test scores</h3></div><span class="badge badge-neutral">2024 test</span></div><p class="panel-intro">Persisted metrics against the constructed rainfall proxy label—not observed flood events.</p><div id="overview-model-chart" class="chart-wrap"><div class="skeleton"></div></div><div class="chart-legend"><span><i class="legend-dot dot-mint"></i>Accuracy</span><span><i class="legend-dot dot-blue"></i>F1 score</span><span><i class="legend-dot dot-violet"></i>ROC-AUC</span></div></article>
+            <article class="panel insight-panel"><div class="panel-heading"><div><div class="eyebrow">SCIENTIFIC SCOPE</div><h3>Interpret with care</h3></div><span class="badge badge-warn">Proxy model</span></div><div class="insight-stat"><span>01</span><p><strong>Constructed target</strong><small>The label is a rainfall rule, not flood-event ground truth.</small></p></div><div class="insight-stat"><span>02</span><p><strong>Temporal boundary</strong><small>NASA POWER and BWDB coverage do not overlap.</small></p></div><div class="insight-stat"><span>03</span><p><strong>Unverified calibration</strong><small>Saved project-model calibration evidence is absent.</small></p></div><a class="text-link" href="#about">Read all limitations <span>→</span></a></article>
+          </div>
+          <div class="bottom-banner"><div class="banner-symbol">✳</div><div><strong>Built for transparent exploration</strong><span>Every output stays within the project's rainfall-derived proxy scope.</span></div><a href="#explainability">Explore model behavior <span>→</span></a></div>
+        </section>
+
+        <section class="page" id="page-prediction">
+          <div class="page-title"><div><div class="eyebrow">INTERACTIVE WORKSPACE</div><h1>Prediction lab</h1><p>Explore persisted model outputs for an existing reference day with real observed historical context.</p></div><span class="badge badge-warn">Proxy risk · not a flood forecast</span></div>
+          <div class="notice notice-info"><strong>How inputs work</strong><span>Choose a date in the processed NASA POWER dataset. Prior-day lag and rainfall-window features remain sourced from that record; only the same-day meteorological values below are editable.</span></div>
+          <div class="content-grid form-grid">
+            <form id="prediction-form" class="panel form-panel">
+              <div class="panel-heading"><div><div class="eyebrow">OBSERVATION CONTEXT</div><h3>Atmospheric inputs</h3></div><span class="live-tag"><i></i>Local inference</span></div>
+              <label class="field-label" for="prediction-date">Reference date <span>from processed dataset</span></label><input id="prediction-date" name="reference_date" type="date" required>
+              <div class="fields-grid">
+                <label class="field-label" for="temperature">Temperature <span>°C</span><input id="temperature" name="temperature" type="number" step="0.01" min="-90" max="65" required></label>
+                <label class="field-label" for="rainfall">Rainfall <span>mm/day</span><input id="rainfall" name="rainfall" type="number" step="0.01" min="0" max="1000" required></label>
+                <label class="field-label" for="humidity">Relative humidity <span>%</span><input id="humidity" name="humidity" type="number" step="0.01" min="0" max="100" required></label>
+                <label class="field-label" for="wind_speed">Wind speed <span>m/s</span><input id="wind_speed" name="wind_speed" type="number" step="0.01" min="0" max="100" required></label>
+                <label class="field-label" for="pressure">Surface pressure <span>kPa</span><input id="pressure" name="pressure" type="number" step="0.01" min="50" max="120" required></label>
+              </div>
+              <label class="field-label" for="prediction-model">Explanation model</label><select id="prediction-model" name="model_name"><option value="random_forest">Random Forest</option><option value="logistic_regression">Logistic Regression</option><option value="gradient_boosting">Gradient Boosting</option></select>
+              <div id="prediction-error" class="field-error hidden" role="alert"></div>
+              <button class="button button-primary submit-button" type="submit"><span>Run prediction</span><span>→</span></button>
+              <p class="form-footnote">The proxy output is not an observed flood probability. Calibration of the saved models is unverified.</p>
+            </form>
+            <div class="result-column" id="prediction-results"><div class="panel empty-state"><div class="empty-icon">⌁</div><h3>Ready when you are</h3><p>Run a prediction to view all three persisted model outputs, input-domain information, and a local explanation.</p><span class="empty-hint">No model will be retrained or replaced.</span></div></div>
+          </div>
+        </section>
+
+        <section class="page" id="page-models">
+          <div class="page-title"><div><div class="eyebrow">PERSISTED EVALUATION</div><h1>Model comparison</h1><p>Chronological test metrics from the existing Phase 7 evaluation artifacts.</p></div><span class="badge badge-neutral">Metrics are not recalculated</span></div>
+          <div class="notice notice-warn"><strong>Interpretation</strong><span>Perfect tree-model metrics reflect a label explicitly constructed from rainfall features. These values do not establish skill at predicting observed floods.</span></div>
+          <div class="panel"><div class="panel-heading"><div><div class="eyebrow">TEST SET · 2024-01-01 — 2024-12-31</div><h3>Held-out model metrics</h3></div><span class="badge badge-neutral">366 test rows</span></div><div id="models-table" class="table-wrap"><div class="skeleton"></div></div></div>
+          <div class="panel chart-panel"><div class="panel-heading"><div><div class="eyebrow">COMPARATIVE VIEW</div><h3>Accuracy · F1 · ROC-AUC</h3></div></div><div id="models-chart" class="chart-wrap"></div><div class="chart-legend"><span><i class="legend-dot dot-mint"></i>Accuracy</span><span><i class="legend-dot dot-blue"></i>F1 score</span><span><i class="legend-dot dot-violet"></i>ROC-AUC</span></div></div>
+        </section>
+
+        <section class="page" id="page-explainability">
+          <div class="page-title"><div><div class="eyebrow">PHASE 10 · MODEL INTERPRETATION</div><h1>Explainability</h1><p>Explore persisted importance, directionality, and partial-dependence summaries for the proxy model.</p></div><span class="badge badge-neutral">Persisted artifacts</span></div>
+          <div class="notice notice-info"><strong>Not causal evidence</strong><span>Feature associations and partial-dependence-style summaries describe model behavior on the rainfall-derived proxy task. They are not causal effects or explanations of observed flood events.</span></div>
+          <div class="content-grid explain-grid">
+            <article class="panel"><div class="panel-heading"><div><div class="eyebrow">GLOBAL FEATURE IMPORTANCE</div><h3>Top model features</h3></div><span class="badge badge-neutral">Phase 10</span></div><div id="importance-chart" class="bar-chart"><div class="skeleton"></div></div><div class="chart-caption">Persisted global importance · Random Forest</div></article>
+            <article class="panel"><div class="panel-heading"><div><div class="eyebrow">FEATURE DIRECTIONALITY</div><h3>Association with proxy probability</h3></div></div><div id="directionality-list" class="direction-list"><div class="skeleton"></div></div></article>
+          </div>
+          <article class="panel partial-panel"><div class="panel-heading"><div><div class="eyebrow">PARTIAL-DEPENDENCE-STYLE SUMMARY</div><h3>Rainfall response curve</h3></div><span class="badge badge-neutral">Persisted Phase 10</span></div><div id="pdp-chart" class="chart-wrap"><div class="skeleton"></div></div><div class="chart-caption">Average model proxy-risk probability across the persisted rainfall grid. This is descriptive, not causal.</div></article>
+          <div class="notice notice-warn"><strong>Evidence boundary</strong><span>Local explanations are generated for the active prediction only. The saved Phase 10 local example is retained as a historical artifact; it is not presented as an explanation of new inputs.</span></div>
+        </section>
+
+        <section class="page" id="page-scenarios">
+          <div class="page-title"><div><div class="eyebrow">PHASE 11 · CONTROLLED PERTURBATIONS</div><h1>Scenario analysis</h1><p>Test how persisted proxy models respond to controlled changes in rainfall and humidity.</p></div><span class="badge badge-warn">Stress test · not a forecast</span></div>
+          <div class="notice notice-warn"><strong>Scientific warning</strong><span>These are controlled proxy-model scenario responses; they are not real flood warnings or forecast evaluations.</span></div>
+          <div class="content-grid scenario-grid">
+            <form id="scenario-form" class="panel form-panel">
+              <div class="panel-heading"><div><div class="eyebrow">PERTURBATION CONTROLS</div><h3>Set the scenario</h3></div><span class="live-tag"><i></i>Phase 11 engine</span></div>
+              <label class="field-label" for="scenario-model">Model</label><select id="scenario-model"><option value="random_forest">Random Forest</option><option value="logistic_regression">Logistic Regression</option><option value="gradient_boosting">Gradient Boosting</option></select>
+              <label class="field-label" for="scenario-date">Reference date</label><input id="scenario-date" type="date" required>
+              <div class="scenario-control"><div class="range-title"><label for="rainfall-change">Rainfall feature family</label><output id="rainfall-output">+20%</output></div><input id="rainfall-change" type="range" min="-20" max="20" step="10" value="20"><div class="range-ends"><span>−20%</span><span>Baseline</span><span>+20%</span></div><small>Same-day rainfall and associated rolling/lag features are scaled uniformly.</small></div>
+              <div class="scenario-control"><div class="range-title"><label for="humidity-change">Same-day humidity</label><output id="humidity-output">+10%</output></div><input id="humidity-change" type="range" min="-10" max="10" step="10" value="10"><div class="range-ends"><span>−10%</span><span>Baseline</span><span>+10%</span></div></div>
+              <div id="scenario-error" class="field-error hidden" role="alert"></div><button class="button button-primary submit-button" type="submit"><span>Run scenario response</span><span>→</span></button>
+              <p class="form-footnote">The input values are loaded from the selected reference day. Change them in the Prediction lab first if needed.</p>
+            </form>
+            <div id="scenario-results"><div class="panel empty-state"><div class="empty-icon">↗</div><h3>Explore a controlled response</h3><p>Choose perturbations to compare baseline and scenario proxy-model outputs.</p><span class="empty-hint">No physical flood process is simulated.</span></div></div>
+          </div>
+        </section>
+
+        <section class="page" id="page-about">
+          <div class="page-title"><div><div class="eyebrow">SCOPE · PROVENANCE · LIMITATIONS</div><h1>About ClimateGuard AI</h1><p>A research-oriented machine-learning workflow with an explicit boundary between proxy outputs and real-world hydrology.</p></div><span class="badge badge-neutral">Local demonstration</span></div>
+          <div class="about-lead"><span class="about-mark">✳</span><div><h2>Scientific objective</h2><p>Demonstrate source-aware data handling, leakage-conscious temporal evaluation, classical machine learning, uncertainty/OOD checks, explainability, robustness, and reproducibility—without claiming observed flood prediction.</p></div></div>
+          <div class="content-grid about-grid">
+            <article class="panel"><div class="eyebrow">DATA SOURCES</div><h3>Distinct evidence streams</h3><div class="source-card"><span class="source-icon">N</span><div><strong>NASA POWER</strong><small>Daily Dhaka meteorology · 2015–2024</small></div><span class="badge badge-good">Model inputs</span></div><div class="source-card"><span class="source-icon source-bwdb">B</span><div><strong>BWDB</strong><small>One station · 31-day 2026 snapshot</small></div><span class="badge badge-neutral">Not training labels</span></div><div class="notice notice-warn compact"><strong>No temporal overlap</strong><span>The NASA POWER series ends in 2024; the available BWDB snapshot begins in 2026. No fused supervised NASA/BWDB dataset exists.</span></div></article>
+            <article class="panel"><div class="eyebrow">PIPELINE OVERVIEW</div><h3>From source to analysis</h3><ol class="pipeline-list"><li><span>01</span><div><strong>Acquire & validate</strong><small>NASA POWER daily variables with provenance and quality checks.</small></div></li><li><span>02</span><div><strong>Engineer features</strong><small>Past-only rolling rainfall, lags, and calendar descriptors.</small></div></li><li><span>03</span><div><strong>Construct proxy target</strong><small>A documented rainfall rule—not a flood observation.</small></div></li><li><span>04</span><div><strong>Evaluate chronologically</strong><small>2015–2021 train · 2022–2023 validation · 2024 test.</small></div></li><li><span>05</span><div><strong>Audit model behavior</strong><small>Explainability, OOD, robustness, and controlled scenarios.</small></div></li></ol></article>
+          </div>
+          <article class="panel limitations-panel"><div class="panel-heading"><div><div class="eyebrow">RESPONSIBLE SCIENCE</div><h3>Limitations & appropriate use</h3></div><span class="badge badge-warn">Read before interpreting outputs</span></div><ul class="limitations-list">
+            <li><strong>Rainfall-derived proxy target.</strong> The label is positive when the 7-day rainfall total is at least 60 mm and same-day rainfall is at least 10 mm; it is not observed flood ground truth.</li>
+            <li><strong>No observed flood labels.</strong> BWDB water levels are not flood labels and do not establish an official threshold.</li>
+            <li><strong>Limited BWDB coverage.</strong> One station has a limited 31-day snapshot; external-source historical verification remains limited.</li>
+            <li><strong>No NASA/BWDB overlap.</strong> The sources are kept separate; no fused supervised dataset exists.</li>
+            <li><strong>Proxy probability only.</strong> A classifier probability refers to its constructed proxy target, not real-world flood probability.</li>
+            <li><strong>Calibration unverified.</strong> Persisted calibration metrics for the saved project models are absent.</li>
+            <li><strong>Scenario response only.</strong> Perturbations are model stress tests, not physical flood simulations, climate projections, or forecast evaluations.</li>
+            <li><strong>Perfect tree scores are not flood skill.</strong> The target is built from rainfall features, so perfect scores show reproduction of a constructed rainfall rule.</li>
+            <li><strong>Not operational infrastructure.</strong> This local dashboard is a portfolio/research demonstration, not an official warning service.</li>
+          </ul></article>
+          <div class="setup-panel"><div><div class="eyebrow">LOCAL RUN</div><h3>Start the dashboard</h3><p>Backend serves both the API and browser interface.</p></div><code>python -m uvicorn climateguard.webapp:app --app-dir src --reload</code><span>Open <strong>http://127.0.0.1:8000</strong> · API docs at <strong>/docs</strong></span></div>
+        </section>
+        <footer class="footer"><span>ClimateGuard AI · Research interface</span><span>Rainfall-derived proxy risk · Dhaka, Bangladesh</span><a href="#about">Responsible science <span>↗</span></a></footer>
+      </main>
+    </div>
+    <script src="/static/dashboard.js" defer></script>
+  </body>
+</html>

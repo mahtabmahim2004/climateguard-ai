@@ -1,0 +1,77 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter and notebooks checkpoints
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# WSL
+.wslconfig
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Data and generated outputs
+# Keep placeholder files in the repo, but ignore actual local datasets.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/external/*
+!data/external/.gitkeep
+!data/external/dataset_manifest.csv
+
+*.parquet
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Model artifacts
+models/
+artifacts/
+checkpoints/
+
+# Logs and caches
+*.log
+.pytest_cache/
+.pytest-run-temp/
+.pytest_tmp/
+.mypy_cache/
+.ruff_cache/
+.pip-temp/
+.pipcache/
+.matplotlib/
+.site-packages/
+.tmp/
+coverage.xml
+htmlcov/
+
+# Local tooling
+*.tmp
+*.bak
