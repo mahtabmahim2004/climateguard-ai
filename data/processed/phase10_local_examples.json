@@ -1,0 +1,45 @@
+[
+  {
+    "sample_index": 0,
+    "predicted_probability": 0.0,
+    "predicted_proxy_label": 0,
+    "top_contributing_features": [
+      {
+        "feature": "temperature",
+        "value": 17.04,
+        "reference_value": 27.46,
+        "effect_on_probability": 0.0,
+        "direction": "neutral"
+      },
+      {
+        "feature": "rainfall",
+        "value": 0.0,
+        "reference_value": 2.225,
+        "effect_on_probability": 0.0,
+        "direction": "neutral"
+      },
+      {
+        "feature": "humidity",
+        "value": 62.79,
+        "reference_value": 81.44,
+        "effect_on_probability": 0.0,
+        "direction": "neutral"
+      },
+      {
+        "feature": "wind_speed",
+        "value": 1.31,
+        "reference_value": 1.58,
+        "effect_on_probability": 0.0,
+        "direction": "neutral"
+      },
+      {
+        "feature": "pressure",
+        "value": 101.31,
+        "reference_value": 100.71,
+        "effect_on_probability": 0.0,
+        "direction": "neutral"
+      }
+    ],
+    "scientific_warning": "This local explanation applies only to the rainfall-derived proxy target, not to official flood occurrence."
+  }
+]

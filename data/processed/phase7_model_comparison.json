@@ -1,0 +1,169 @@
+{
+  "models": [
+    {
+      "model_name": "logistic_regression",
+      "validation_metrics": {
+        "accuracy": 0.9602739726027397,
+        "precision": 0.8195488721804511,
+        "recall": 0.956140350877193,
+        "f1_score": 0.8825910931174089,
+        "confusion_matrix": [
+          [
+            592,
+            24
+          ],
+          [
+            5,
+            109
+          ]
+        ],
+        "selected_threshold": 0.6,
+        "roc_auc": 0.9898894964684439,
+        "average_precision": 0.9481138531235486
+      },
+      "test_metrics": {
+        "accuracy": 0.9398907103825137,
+        "precision": 0.7682926829268293,
+        "recall": 0.9545454545454546,
+        "f1_score": 0.8513513513513513,
+        "confusion_matrix": [
+          [
+            281,
+            19
+          ],
+          [
+            3,
+            63
+          ]
+        ],
+        "selected_threshold": 0.6,
+        "roc_auc": 0.9884343434343434,
+        "average_precision": 0.9471455165876879
+      },
+      "selected_threshold": 0.6,
+      "feature_count": 24,
+      "training_date_range": {
+        "earliest": "2015-01-08",
+        "latest": "2021-12-31"
+      },
+      "validation_date_range": {
+        "earliest": "2022-01-01",
+        "latest": "2023-12-31"
+      },
+      "test_date_range": {
+        "earliest": "2024-01-01",
+        "latest": "2024-12-31"
+      }
+    },
+    {
+      "model_name": "random_forest",
+      "validation_metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "confusion_matrix": [
+          [
+            616,
+            0
+          ],
+          [
+            0,
+            114
+          ]
+        ],
+        "selected_threshold": 0.4,
+        "roc_auc": 1.0,
+        "average_precision": 1.0
+      },
+      "test_metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "confusion_matrix": [
+          [
+            300,
+            0
+          ],
+          [
+            0,
+            66
+          ]
+        ],
+        "selected_threshold": 0.4,
+        "roc_auc": 1.0,
+        "average_precision": 0.9999999999999999
+      },
+      "selected_threshold": 0.4,
+      "feature_count": 24,
+      "training_date_range": {
+        "earliest": "2015-01-08",
+        "latest": "2021-12-31"
+      },
+      "validation_date_range": {
+        "earliest": "2022-01-01",
+        "latest": "2023-12-31"
+      },
+      "test_date_range": {
+        "earliest": "2024-01-01",
+        "latest": "2024-12-31"
+      }
+    },
+    {
+      "model_name": "gradient_boosting",
+      "validation_metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "confusion_matrix": [
+          [
+            616,
+            0
+          ],
+          [
+            0,
+            114
+          ]
+        ],
+        "selected_threshold": 0.5,
+        "roc_auc": 1.0,
+        "average_precision": 1.0
+      },
+      "test_metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "confusion_matrix": [
+          [
+            300,
+            0
+          ],
+          [
+            0,
+            66
+          ]
+        ],
+        "selected_threshold": 0.5,
+        "roc_auc": 1.0,
+        "average_precision": 1.0
+      },
+      "selected_threshold": 0.5,
+      "feature_count": 24,
+      "training_date_range": {
+        "earliest": "2015-01-08",
+        "latest": "2021-12-31"
+      },
+      "validation_date_range": {
+        "earliest": "2022-01-01",
+        "latest": "2023-12-31"
+      },
+      "test_date_range": {
+        "earliest": "2024-01-01",
+        "latest": "2024-12-31"
+      }
+    }
+  ]
+}

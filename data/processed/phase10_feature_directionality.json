@@ -1,0 +1,112 @@
+[
+  {
+    "feature": "rainfall",
+    "correlation_with_risk_probability": 0.7223365255619392,
+    "direction": "positive"
+  },
+  {
+    "feature": "rainfall_1d",
+    "correlation_with_risk_probability": 0.7223365255619392,
+    "direction": "positive"
+  },
+  {
+    "feature": "rainfall_3d_total",
+    "correlation_with_risk_probability": 0.6998762860276565,
+    "direction": "positive"
+  },
+  {
+    "feature": "rainfall_7d_total",
+    "correlation_with_risk_probability": 0.6081776369913167,
+    "direction": "positive"
+  },
+  {
+    "feature": "rainfall_lag_1d",
+    "correlation_with_risk_probability": 0.57900980868827,
+    "direction": "positive"
+  },
+  {
+    "feature": "rainfall_14d_total",
+    "correlation_with_risk_probability": 0.5518510135132566,
+    "direction": "positive"
+  },
+  {
+    "feature": "pressure_lag_1d",
+    "correlation_with_risk_probability": -0.4440658561614881,
+    "direction": "negative"
+  },
+  {
+    "feature": "pressure",
+    "correlation_with_risk_probability": -0.43961689410264704,
+    "direction": "negative"
+  },
+  {
+    "feature": "rainfall_lag_2d",
+    "correlation_with_risk_probability": 0.42560996555794217,
+    "direction": "positive"
+  },
+  {
+    "feature": "wind_speed",
+    "correlation_with_risk_probability": 0.4215923695379509,
+    "direction": "positive"
+  },
+  {
+    "feature": "humidity",
+    "correlation_with_risk_probability": 0.4211590130127291,
+    "direction": "positive"
+  },
+  {
+    "feature": "wind_speed_lag_1d",
+    "correlation_with_risk_probability": 0.40562717678181404,
+    "direction": "positive"
+  },
+  {
+    "feature": "humidity_lag_1d",
+    "correlation_with_risk_probability": 0.39507397424523266,
+    "direction": "positive"
+  },
+  {
+    "feature": "rainfall_lag_3d",
+    "correlation_with_risk_probability": 0.33654894560625626,
+    "direction": "positive"
+  },
+  {
+    "feature": "temperature_lag_3d",
+    "correlation_with_risk_probability": 0.32805335904753846,
+    "direction": "positive"
+  },
+  {
+    "feature": "temperature_lag_2d",
+    "correlation_with_risk_probability": 0.31737125622157153,
+    "direction": "positive"
+  },
+  {
+    "feature": "temperature_lag_1d",
+    "correlation_with_risk_probability": 0.30117001886488787,
+    "direction": "positive"
+  },
+  {
+    "feature": "temperature",
+    "correlation_with_risk_probability": 0.2848796565477171,
+    "direction": "positive"
+  },
+  {
+    "feature": "rainfall_lag_7d",
+    "correlation_with_risk_probability": 0.21874628377881356,
+    "direction": "positive"
+  },
+  {
+    "feature": "month",
+    "correlation_with_risk_probability": 0.05443121431974413,
+    "direction": "positive"
+  },
+  {
+    "feature": "day_of_year",
+    "correlation_with_risk_probability": 0.05052559871620373,
+    "direction": "positive"
+  },
+  {
+    "feature": "day_of_week",
+    "correlation_with_risk_probability": 0.009569482920661737,
+    "direction": "mixed"
+  }
+]

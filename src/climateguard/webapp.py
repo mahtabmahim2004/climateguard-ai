@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 from datetime import date
 from http import HTTPStatus
 from pathlib import Path
@@ -561,9 +562,11 @@ def app(environ: dict[str, Any], start_response: Any) -> list[bytes]:
 
 
 def serve() -> None:
-    with make_server("127.0.0.1", 8000, app) as server:
-        print("ClimateGuard AI dashboard: http://127.0.0.1:8000")
-        print("API health endpoint: http://127.0.0.1:8000/api/health")
+    is_render = os.environ.get("RENDER", "").lower() == "true"
+    host = "0.0.0.0" if is_render else "127.0.0.1"
+    port = int(os.environ.get("PORT", "8000"))
+    with make_server(host, port, app) as server:
+        print(f"ClimateGuard AI dashboard listening on {host}:{port}")
         server.serve_forever()
 
 

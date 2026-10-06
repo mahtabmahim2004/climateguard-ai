@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: climateguard-ai
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: PYTHONPATH=src python -m climateguard.webapp
+    healthCheckPath: /api/health

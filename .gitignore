@@ -75,3 +75,16 @@ htmlcov/
 # Local tooling
 *.tmp
 *.bak
+
+# Dashboard runtime artifacts required by src/climateguard/webapp.py.
+# Keep the rest of processed data and model outputs ignored.
+!data/processed/flood_model_dataset.csv
+!data/processed/phase7_model_comparison.json
+!data/processed/phase10_global_feature_importance.csv
+!data/processed/phase10_feature_directionality.json
+!data/processed/phase10_partial_dependence.json
+!data/processed/phase10_local_examples.json
+!data/processed/models/
+!data/processed/models/logistic_regression.joblib
+!data/processed/models/random_forest.joblib
+!data/processed/models/gradient_boosting.joblib

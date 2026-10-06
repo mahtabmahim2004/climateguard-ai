@@ -7,6 +7,7 @@ from urllib.parse import urlencode
 
 from wsgiref.util import setup_testing_defaults
 
+import climateguard.webapp as webapp
 from climateguard.webapp import app
 
 
@@ -152,3 +153,51 @@ def test_dashboard_serves_browser_ui_and_assets() -> None:
     assert ":root{" in style
     assert "text/css" in style_type
     assert "fonts.googleapis.com" not in style
+
+
+def test_local_server_configuration_preserves_loopback_and_default_port(monkeypatch: Any) -> None:
+    monkeypatch.delenv("RENDER", raising=False)
+    monkeypatch.delenv("PORT", raising=False)
+    captured: list[tuple[str, int]] = []
+
+    class FakeServer:
+        def __enter__(self) -> FakeServer:
+            return self
+
+        def __exit__(self, *args: Any) -> None:
+            return None
+
+        def serve_forever(self) -> None:
+            return None
+
+    def fake_make_server(host: str, port: int, application: Any) -> FakeServer:
+        captured.append((host, port))
+        return FakeServer()
+
+    monkeypatch.setattr(webapp, "make_server", fake_make_server)
+    webapp.serve()
+    assert captured == [("127.0.0.1", 8000)]
+
+
+def test_render_server_uses_public_bind_and_render_port(monkeypatch: Any) -> None:
+    monkeypatch.setenv("RENDER", "true")
+    monkeypatch.setenv("PORT", "10000")
+    captured: list[tuple[str, int]] = []
+
+    class FakeServer:
+        def __enter__(self) -> FakeServer:
+            return self
+
+        def __exit__(self, *args: Any) -> None:
+            return None
+
+        def serve_forever(self) -> None:
+            return None
+
+    def fake_make_server(host: str, port: int, application: Any) -> FakeServer:
+        captured.append((host, port))
+        return FakeServer()
+
+    monkeypatch.setattr(webapp, "make_server", fake_make_server)
+    webapp.serve()
+    assert captured == [("0.0.0.0", 10000)]

@@ -219,3 +219,9 @@ if ($listener) {
 ```
 
 This is only a local launch convenience for the completed dashboard. It does not change the dashboard, add a background service, or make the project an operational flood-warning system.
+
+### Render deployment configuration
+
+The root-level `render.yaml` configures a Python web service whose start command runs the existing WSGI dashboard. On Render, the server binds to `0.0.0.0` and reads Render's `PORT`; outside Render it retains the local `127.0.0.1:8000` default used by the Windows shortcut. The browser dashboard's local URL and Windows launcher are unchanged.
+
+**Deployment is not performed by this change.** The narrow `.gitignore` exceptions track only the existing runtime files needed by the dashboard: the processed modeling dataset, three saved Phase 7 model pipelines, Phase 7 comparison metrics, and four Phase 10 explainability reports. Other processed outputs, model artifacts, raw source data, caches, and local environments remain ignored. A fresh Render GitHub checkout can load these runtime files directly without retraining or generating artifacts. No new deployment dependency or scientific result is introduced.
